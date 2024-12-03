@@ -1,0 +1,12 @@
+{
+    "tasks": [
+        { "name": "Finish writing blog post", "due": "12/04", "priority": "medium", "tag": "personal" },
+        { "name": "Prepare for math test", "due": "12/05", "priority": "now", "tag": "school" },
+        { "name": "Buy groceries", "due": "12/06", "priority": "low", "tag": "personal" },
+        { "name": "Submit project report", "due": "12/03", "priority": "now", "tag": "work" },
+        { "name": "Plan weekend trip", "due": "12/07", "priority": "low", "tag": "personal" },
+        { "name": "Team meeting at 3 PM", "due": "12/04", "priority": "medium", "tag": "work" },
+        { "name": "Complete science assignment", "due": "12/06", "priority": "now", "tag": "school" },
+        { "name": "Call the plumber", "due": "12/05", "priority": "low", "tag": "personal" }
+    ]
+}

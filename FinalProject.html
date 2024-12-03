@@ -6,18 +6,35 @@
   <title>Task Me Later!</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <h1>Task Me Later!</h1>
-    <nav>
-      <button id="homeTab">Home</button>
-      <button id="manageTab">To Do List</button>
-      <button id="upNextTab">Up Next</button>
-    </nav>
-  </header>
-  <main id="content">
-    <!-- Content dynamically loaded by JavaScript -->
-  </main>
-  <script src="script.js"></script>
-</body>
+    <body>
+      <header>
+        <h1>Task Me Later!</h1>
+        <nav>
+          <button id="homeTab" onclick="window.location.href = 'FinalProject.html'">Home</button>
+          <button id="manageTab" onclick="window.location.href = 'todo.html'">To Do List</button>
+          <button id="upNextTab" onclick="window.location.href = 'UpNext.html'">Up Next</button>
+        </nav>
+      </header>
+
+      <main id="content">
+      <script src="FinalProject.js" defer></script>
+
+          <!-- Add buttons for task options -->
+          <div class="task-options">
+              <button id="school">School</button>
+              <button id="work">Work</button>
+              <button id="personal">Personal</button>
+              <button id="reset">Reset</button>
+          </div>
+
+      <div id="task-list">
+                <!-- Tasks will be loaded here -->
+      </div>
+
+
+     <footer>
+            <p>Copyright our website 2024</p>
+      </footer>
+    </main>
+    </body>
 </html>

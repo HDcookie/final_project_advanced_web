@@ -4,10 +4,15 @@ body {
     padding: 0;
     background-color: #f8f9fa;
     color: #333;
+  display: flex;
+    flex-direction: column;
   }
   
   header {
     background-color: #007bff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -32,10 +37,30 @@ body {
     background-color: #0056b3;
     color: white;
   }
-  
-  #content {
-    padding: 20px;
+
+  main{
+    flex : 1;
   }
+  
+  #task-list {
+    padding: 20px;
+    margin-top: 75px;
+  }
+
+    .task-options {
+        display: flex;
+        justify-content: space-between;
+        float: right;
+        margin-top: 20px;
+    }
+  .task-options button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
   
   table {
     width: 100%;
@@ -65,4 +90,24 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
+  footer{
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+
+  }
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.task.now { background-color: #f8b4b4; }
+.task.medium { background-color: #fdf7b4; }
+.task.low { background-color: #b4f8b4; }
+
