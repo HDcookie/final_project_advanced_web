@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Me Later!</title>
+  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="manage.css">
+</head>
+    <body>
+      <header>
+        <h1>Task Me Later!</h1>
+        <nav>
+            <button id="homeTab" onclick="window.location.href = 'FinalProject.html'">Home</button>
+            <button id="manageTab" onclick="window.location.href = 'manage.html'">Manage List</button>
+            <button id="upNextTab" onclick="window.location.href = 'UpNext.html'">Up Next</button>
+        </nav>
+      </header>
+
+      <main id="content">
+        <script src="manage.js" defer></script>
+        <h1>Manage Your To-Do List</h1>
+        <form id="task-form">
+            <label for="task">Task:</label>
+            <input type="text" id="task" name="task" required>
+
+            <label for="due-date">Due Date:</label>
+            <input type="date" id="due-date" name="due-date" required>
+
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" required>
+              <option value="now">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+
+            <label for="tag">Category:</label>
+            <select id="tag" name="tag" required>
+              <option value="work">Work</option>
+              <option value="school">School</option>
+              <option value="personal">Personal</option>
+            </select>
+
+            <button type="submit" id="addTask">Add Task</button>
+        </form>
+
+          <!-- Add button to show completed tasks -->
+        <button id="showCompleted">Show Completed Tasks</button>
+
+
+        <div id="task-list">
+                  <!-- Tasks will be loaded here -->
+        </div>
+
+
+       <footer>
+              <p>Copyright our website 2024</p>
+        </footer>
+    </main>
+    </body>
+</html>

@@ -110,4 +110,5 @@ body {
 .task.now { background-color: #f8b4b4; }
 .task.medium { background-color: #fdf7b4; }
 .task.low { background-color: #b4f8b4; }
+.task.completed { background-color: gray; color: white; }
 
