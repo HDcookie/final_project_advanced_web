@@ -1,5 +1,9 @@
 let showCompleted = false;
 
+/**
+ * Fetches tasks from `tasks.json` and stores them in local storage if not already present.
+ * Then calls `displayTasks` to display the tasks.
+ */
 fetch('tasks.json')
     .then(response => response.json())
     .then(data => {
@@ -9,8 +13,10 @@ fetch('tasks.json')
         displayTasks();
     });
 
-
-
+/**
+ * Adds a new task to the list and updates local storage.
+ * @param {Event} event - The event object for the form submission.
+ */
 function addTask(event) {
     event.preventDefault();
 
@@ -34,8 +40,13 @@ function addTask(event) {
     displayTasks();
 }
 
+// Add event listener to the "Add Task" button
 document.getElementById('addTask').addEventListener('click', addTask);
 
+/**
+ * Displays tasks from local storage in the task list container.
+ * Completed tasks are hidden by default.
+ */
 function displayTasks() {
     const taskList = document.getElementById('task-list');
     const tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -46,9 +57,11 @@ function displayTasks() {
         const taskDiv = document.createElement('div');
         taskDiv.classList.add('task', task.priority);
         taskDiv.setAttribute('data-tag', task.tag);
-        if(task.completed === true) {
+
+        if (task.completed === true) {
             taskDiv.classList.add('completed');
         }
+
         taskDiv.innerHTML = `
             <h3>${task.name}</h3>
             <p>Priority: ${task.priority}</p>
@@ -56,7 +69,7 @@ function displayTasks() {
             <p>${task.tag}</p>
         `;
 
-        // Now, check if the task is completed, if so hide it
+        // Hide completed tasks
         if (task.completed === true) {
             taskDiv.style.display = 'none';
         }
@@ -65,19 +78,21 @@ function displayTasks() {
     });
 }
 
-
-
-document.getElementById('showCompleted').addEventListener('click', function() {
+/**
+ * Toggles the visibility of completed tasks when the "Show Completed" button is clicked.
+ */
+document.getElementById('showCompleted').addEventListener('click', function () {
     console.log('showCompleted clicked');
     const tasks = document.querySelectorAll('.task');
-    if (showCompleted){
+
+    if (showCompleted) {
         tasks.forEach(task => {
-            if(task.classList.contains('completed')) {
+            if (task.classList.contains('completed')) {
                 task.style.display = 'none';
             }
         });
         showCompleted = false;
-    }else {
+    } else {
         tasks.forEach(task => {
             task.style.display = 'flex';
         });

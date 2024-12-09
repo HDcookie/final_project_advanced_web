@@ -1,4 +1,7 @@
-// Fetch tasks from tasks.json and store them in local storage
+/**
+ * Fetch tasks from `tasks.json` and store them in local storage if not already present,
+ * then displays the tasks by calling `displayTasks`.
+ */
 fetch('tasks.json')
     .then(response => response.json())
     .then(data => {
@@ -8,8 +11,11 @@ fetch('tasks.json')
         displayTasks();
     });
 
+/**
+ * Displays tasks from local storage in the task list container.
+ * Filters out completed tasks and adds event listeners for completion buttons.
+ */
 function displayTasks() {
-    // First function to initially display tasks
     const taskList = document.getElementById('task-list');
     const tasks = JSON.parse(localStorage.getItem('tasks'));
 
@@ -41,6 +47,10 @@ function displayTasks() {
     });
 }
 
+/**
+ * Displays tasks filtered by a specific tag. If the tag is "reset", shows all incomplete tasks.
+ * @param {string} tag - The tag to filter tasks by. Use "reset" to display all tasks.
+ */
 function showTasks(tag) {
     const taskList = document.getElementById('task-list');
     const tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -73,6 +83,11 @@ function showTasks(tag) {
     });
 }
 
+/**
+ * Marks a task as completed by updating its `completed` status in local storage
+ * and refreshes the task list display.
+ * @param {number} index - The index of the task to mark as completed.
+ */
 function completeTask(index) {
     const tasks = JSON.parse(localStorage.getItem('tasks'));
     tasks[index].completed = true;
@@ -80,6 +95,7 @@ function completeTask(index) {
     showTasks('reset');
 }
 
+// Add event listeners for tag-based filtering
 document.getElementById('reset').addEventListener('click', () => showTasks('reset'));
 document.getElementById('work').addEventListener('click', () => showTasks('work'));
 document.getElementById('personal').addEventListener('click', () => showTasks('personal'));
